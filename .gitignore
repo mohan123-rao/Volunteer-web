@@ -1,0 +1,20 @@
+# dependencies
+node_modules/
+backend/node_modules/
+my-react-app/node_modules/
+
+# env files
+.env
+backend/.env
+my-react-app/.env
+
+# logs
+*.log
+
+# build output
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
