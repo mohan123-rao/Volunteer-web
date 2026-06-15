@@ -1,58 +1,35 @@
 import { useState } from "react";
-import "./login.css";
+import "./App.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { recognition,speak } from "./Voiceassistant.jsx";
 import { useEffect } from "react";
 
 function Login() {
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if(!localStorage.getItem("userToken")) {
-      speak("Meru inka account create cheyyaledhu.first account create cheyandi. lekapothe login cheyaleru. account create cheyali ante sign up meeda click cheyandi. login cheyali ante email and password enter chesi login meeda click cheyandi.");
-    }
-    speak("Welcome to Local Cart Login Page.login cheyali ante email and password enter chesi login meeda click cheyandi.");
-    
-  }, []);
 
   const FormSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const res = await axios.post(
-        "http://localhost:3000/login",
-        { email, password }
-      );
-
-      // ✅ store only the token
-      localStorage.setItem("userToken", res.data.token);
-      localStorage.setItem("role","customer")
-      console.log(res.data.token)
-
-      alert("Login successful!");
-      navigate("/");
-
-    } catch (err) {
-      console.error(err);
-      alert(err.response?.data?.message || "Login failed");
+    if(name == 'admin' && password == 'admin123'){
+      navigate('/dashboard')
     }
   };
 
   return (
     <div className="out-login">
-      <div className="login" style={{ maxWidth: "400px", margin: "auto",textAlign: "center", backgroundColor: "lightblue", padding: "20px", borderRadius: "8px", boxShadow: "0 0 10px rgba(0, 0, 0, 0.7)" }}>
+      <div className="login">
         <h1>Login</h1>
 
         <form onSubmit={FormSubmit}>
-          Email:<br />
+          User Name:<br />
           <input
-            type="email"
-            placeholder="Enter your Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            placeholder="Enter User Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             required
           /><br /><br />
 
@@ -63,15 +40,14 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-          /><br /><br />
+          /><br /><br /><br />
 
           <button type="submit">Login</button><br /><br />
-
-          <p>
-            Don't have an account? <Link to="/signup">Sign Up</Link>
-          </p>
         </form>
+        
       </div>
+      <br />
+      <p style={{color:'black'}}>Note:user Name is 'admin',password is 'admin123'.<br/>This is sample project so provided this data here.</p>
     </div>
   );
 }

@@ -1,49 +1,50 @@
 const mongoose = require('mongoose');
 
-const restaurantSchema = new mongoose.Schema({
-    resName: {
+const volunteerSchema = new mongoose.Schema({
+    fullName: {
         type: String,
-        required: true,
         trim: true
     },
     email:{
         type: String,
-        required: true,
-        trim: true
-    },
-    password: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    description: {
-        type: String,
-        trim: true
-    },
-    category: {
-        type: String,
-        trim: true
-    },
-    Distict: { // assuming you meant 'District'
-        type: String,
-        trim: true
-    },
-    City: {
-        type: String,
         trim: true
     },
     phoneNumber: {
+        type: Number,
+        trim: true
+    },
+    gender: {
         type: String,
         trim: true
     },
-    estimatedDeliveryTime: {
-        type: Number, // in minutes
-        min: 0
+    age: {
+        type: String,
+        trim: true
+    },
+    address: { 
+        type: String,
+        trim: true
+    },
+    skills: {
+        type: String,
+        trim: true
+    },
+    areaOfInterest: {
+        type: String,
+        trim: true
+    },
+    availability: {
+        type: String,
+        trim:true
+    },
+    prefferredLocation:{
+        type:String,
+        trim:true
     }
 }, {
     timestamps: true // Automatically adds createdAt and updatedAt fields
 });
 
-const Restaurant = mongoose.model('Restaurant', restaurantSchema);
+const Volunteer = mongoose.model('Volunteer', volunteerSchema);
 
-module.exports = Restaurant;
+module.exports = Volunteer;

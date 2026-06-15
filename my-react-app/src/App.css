@@ -1,27 +1,77 @@
 
 
-form {
-  text-align: left;
-}
-
-#profile {
-  color: white;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-.login ,.signup{
-  background-color: antiquewhite;
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-}
-
 body {
-  min-height: 100vh;
   display: grid;
   place-items: center;
+  background-color: blue;
+}
+
+table{
+  border-radius: 20px;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+td:nth-child(odd) {
+  background-color: #D6EEEE;
+}
+
+.vData {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color:white;
+  font-family: Arial, sans-serif;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow:  5px 5px #888888;
+  
+}
+
+.out-login .login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color:white;
+  font-family: Arial, sans-serif;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 4px 4px #888888; ;
+}
+
+.vData input ,.vData select ,.out-login .login input{
+  width: 300px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.vData button ,.out-login .login button {
+  display: block;
+  margin: 0 auto;
+  background-color: blue;
+  color:white
+}
+
+.dashboard {
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+  border-radius: 20px;
+  box-shadow:  5px 5px #888888;
+  margin-left:10px ;
+  margin-right: 10px;
+  
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -30,59 +80,123 @@ body {
   }
 }
 
-.search-res {
-  width: 100%;
-  height: 500px;
+h3,p{
+  color:white;
 }
 
-.res-div{
-  width: 300px;
- background-color: white;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(93, 6, 233, 0.08);
-  overflow: hidden;
-  font-family: "Poppins", sans-serif;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 30px;
+.about h2,.about p{
+  color:black;
 }
 
-.res-div:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(9, 217, 249, 0.7);
-}
-
-#sea-res {
-  width: 300px;
- background-color:white;
-  border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(93, 6, 233, 0.08);
-  overflow: hidden;
-  font-family: "Poppins", sans-serif;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 30px;
-}
-
-#sea-res:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(9, 217, 249, 0.7);
-}
-
-.items ,.login-res {
-  padding: 20px;
-  background-color:antiquewhite;
-  border-radius: 20px;
-  text-align: center;
-}
-
-#r-login, #c-login {
-  margin: 20px;
-  padding: 12px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-#r-login:hover, #c-login:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+.home {
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+  margin-top:-100px
 
 }
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#f4f7fc;
+}
+
+.navbar{
+  background:#2563eb;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+}
+
+.navbar ul{
+  display:flex;
+  list-style:none;
+}
+
+.navbar li{
+  margin-left:20px;
+}
+
+.navbar a{
+  color:white;
+  text-decoration:none;
+}
+
+.hero{
+  text-align:center;
+  padding:100px 20px;
+  background:#2563eb;
+  color:white;
+}
+
+.hero h1{
+  font-size:45px;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:18px;
+  margin-bottom:25px;
+}
+
+.register-btn{
+  background:#22c55e;
+  color:white;
+  border:none;
+  padding:12px 25px;
+  border-radius:5px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.about{
+  text-align:center;
+  padding:60px 20px;
+  background:white;
+}
+
+.about h2{
+  margin-bottom:20px;
+}
+
+.stats{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  padding:50px;
+}
+
+.card{
+  width:220px;
+  background:white;
+  text-align:center;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.card h2{
+  color:#2563eb;
+  margin-bottom:10px;
+}
+
+footer{
+  background:#2563eb;
+  color:white;
+  text-align:center;
+  padding:15px;
+}
+
+.card p{
+  color:#2563eb
+}
+
