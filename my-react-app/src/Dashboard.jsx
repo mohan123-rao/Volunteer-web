@@ -9,7 +9,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchAll = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/volunteer-get");
+        const res = await axios.get("https://volunteer-backend-4bfp.onrender.com/volunteer-get");
         console.log(res.data);
         setData(res.data);
       } catch (err) {
