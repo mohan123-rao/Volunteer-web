@@ -34,7 +34,7 @@ const Volunteer = () => {
         console.log(volunteerData)
 
         try {
-      const res = await axios.post('http://localhost:3000/volunteer',volunteerData);
+      const res = await axios.post('https://volunteer-backend-4bfp.onrender.com/volunteer',volunteerData);
       console.log('Volunteer added:', res.data);
       alert('Volunteer added successfully!');
 
