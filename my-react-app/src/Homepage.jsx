@@ -14,8 +14,8 @@ const Homepage = () => {
         <h2>VolunteerHub</h2>
 
         <ul>
-          <li><a href="/volunteer">Register</a></li>
-          <li><a href="/login">Admin Login</a></li>
+          <li><Link to="/volunteer">Register</Link></li>
+          <li><Link to="/login">Admin Login</Link></li>
         </ul>
       </nav>
 
@@ -30,7 +30,7 @@ const Homepage = () => {
         </p>
 
         <button className="register-btn">
-         <a href="/volunteer">Register Now</a>
+         <Link to="/volunteer">Register Now</Link>
         </button>
 
       </section>
